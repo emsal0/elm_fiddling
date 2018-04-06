@@ -7,5 +7,5 @@ Requires yarn.
 run dev:
 
 ```
-yarn run dev
+yarn run client
 ```
