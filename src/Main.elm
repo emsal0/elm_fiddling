@@ -4,6 +4,9 @@ import Html exposing (Html, div, h1, text, program, button)
 import Html.Events exposing (onClick)
 import Random
 
+import Svg exposing (..)
+import Svg.Attributes exposing (..)
+
 type alias Model =
     { dieFace : Int
 
@@ -24,8 +27,12 @@ type Msg
 view : Model -> Html Msg
 view model =
     div []
-        [ h1 [] [ text (toString model.dieFace) ]
-        , button [ onClick Roll ] [ text "Roll" ]
+        [ svg
+            [ width "600"
+            , height "600"
+            ]
+            [ Svg.text_ [ x "20", y "20", fontSize "20" ] [Svg.text (toString model.dieFace)] ]
+        , button [ onClick Roll ] [ Html.text "Roll" ]
         ]
 
 -- UPDATE
